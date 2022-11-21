@@ -17,6 +17,7 @@ and change the database configuration in the .env file
 2- run command -> php artisan migrate
 3- run command -> php artisan db:seed
 4- run command -> php artisan serve
+5- open 1270.0.1/admin/settings and change the secret keys with yours
 Note: you can find the imported database in db folder & schema design
 ------------------------------------------
 
