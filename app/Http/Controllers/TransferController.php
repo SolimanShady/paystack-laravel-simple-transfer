@@ -167,7 +167,7 @@ class TransferController extends Controller
 
         $fields = [
           'source' => "balance",
-          'amount' => $request->amount . 00,
+          'amount' => $request->amount * 100,
           'recipient' => $request->recipient_code,
           'reason' => $request->reason
         ];
@@ -190,6 +190,10 @@ class TransferController extends Controller
         //execute post
         $result = curl_exec($ch);
         $result = json_decode($result);
+
+        if( !$result->status ) {
+            return $result->message;
+        }
 
         $transfer_code = $result->data->transfer_code;
 
@@ -246,14 +250,17 @@ class TransferController extends Controller
         // $result->data->reason = "Salary";
 
         if ( !$result->status ) {
-            return $result->message;
+            return view('transfer.otp', [
+                'message' => $result->message,
+                'transfer_code' => $request->transfer_code
+            ]);
         }
 
         // Insert transfer information into the database
         Model::create([
             'reference' => $result->data->reference,
             'currency' => $result->data->currency,
-            'amount' => $result->data->amount,
+            'amount' => $result->data->amount / 100,
             'reason' => $result->data->reason,
             'transfer_code' => $result->data->transfer_code,
             'status' => $result->data->status
