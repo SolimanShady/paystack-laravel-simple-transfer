@@ -12,14 +12,20 @@
 <body>
 
     <div id="logo">
-        <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        <a href="{{ route('index') }}">
+            <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        </a>
     </div>
 
     <div class="login">
         <b>OTP CONFIRMATION</b>
         <hr>
         <div class="row">
-
+            @if( !empty($message) )
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @endif
             <form action="{{route('finalizeTransfer')}}" method="post">
                 @csrf
                 <input type="hidden" name="transfer_code" value="{{$transfer_code}}">

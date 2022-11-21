@@ -12,7 +12,9 @@
 <body>
 
     <div id="logo" style="top:10%;">
-        <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        <a href="{{ route('index') }}">
+            <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        </a>
     </div>
 
     <div class="login">
@@ -37,7 +39,7 @@
                     <input type="text" name="bank_name" id="bank_name", class="form-control" value="{{$bank_name}}" disabled>
                 </div>
                 <div class="mt-3">
-                    <input type="number" name="amount" id="amount" class="form-control" placeholder="Enter Amount to Transfer" required>
+                    <input type="number" name="amount" id="amount" min="10" class="form-control" placeholder="Enter Amount to Transfer" required>
                     @error('amount')
                         <b id="error-text">{{ $message }}</b>
                     @enderror

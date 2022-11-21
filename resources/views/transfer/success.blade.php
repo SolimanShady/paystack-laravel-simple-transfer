@@ -12,7 +12,9 @@
 <body>
 
     <div id="logo">
-        <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        <a href="{{ route('index') }}">
+            <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        </a>
     </div>
     <div class="login table-responsive">
         <div class="alert alert-success">
@@ -45,7 +47,7 @@
                     {{ $result->data->transfer_code }}
                 </td>
                 <td>
-                    {{ $result->data->amount }}
+                    {{ $result->data->amount / 100 }}
                 </td>
                 <td>
                     {{ $result->data->currency }}

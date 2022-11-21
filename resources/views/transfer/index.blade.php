@@ -12,7 +12,9 @@
 <body>
 
     <div id="logo" class="mb-3">
-        <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        <a href="{{ route('index') }}">
+            <img src="{{ asset('assets/img/logo.svg') }}" alt="logo" />
+        </a>
     </div>
     <div class="login">
         <b>Recipient account verification</b>
