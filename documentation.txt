@@ -1,0 +1,41 @@
+----------------------------------------
+This is test mode project, if you want to go live
+you must have verified business account on paystack.com
+----------------------------------------
+Author: Eng.Soliman Adel
+Email: soliman.adelzx@gmail.com
+Linkedin: https://www.linkedin.com/in/soliman-adel/
+Laravel Framework 8.83.25
+----------------------------------------
+
+Steps
+----------------------------------------
+1- create database using phpmyadmin called {paystack}
+and change the database configuration in the .env file
+- run command -> php artisan cofig:clear
+- run command -> php artisan config:cache
+2- run command -> php artisan migrate
+3- run command -> php artisan db:seed
+4- run command -> php artisan serve
+Note: you can find the imported database in db folder & schema design
+------------------------------------------
+
+Links
+-----------------------------------------
+1- open 127.0.0.1 -> {home page}
+2- open 1270.0.1/admin -> {admin}
+------------------------------------------
+
+Admin account information
+------------------------------------------
+email: admin@admin.com
+password: 123
+Note: you can change account information from dashboard
+-------------------------------------------
+
+
+Recipient account sample
+-------------------------------------------
+Account Number: 3036139441
+Bank code: 011
+-------------------------------------------
