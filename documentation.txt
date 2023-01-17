@@ -4,7 +4,6 @@ you must have verified business account on paystack.com
 ----------------------------------------
 Author: Eng.Soliman Adel
 Email: soliman.adelzx@gmail.com
-Linkedin: https://www.linkedin.com/in/soliman-adel/
 Laravel Framework 8.83.25
 ----------------------------------------
 
